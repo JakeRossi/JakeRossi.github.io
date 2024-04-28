@@ -12,12 +12,14 @@
         #textbox {
             width: 80%;
             height: 60px; /* Reduced height */
-            border: 10px solid black; #ccc; /* Thicker outline */
+            border: 10px solid black; /* Thicker outline */
             padding: 10px;
-            font-size: 70px; /* Text inside box size */
+            font-size: 30px; /* Text inside box size */
             line-height: 1.5;
             border-radius: 10px; /* More circular shape */
             resize: none; /* Disabled resizing */
+            text-align: center; /* Center the text */
+            box-sizing: border-box; /* Include padding and border in width calculation */
         }
         #text-above {
             font-size: 40px; /* Text above box size */
@@ -25,8 +27,8 @@
     </style>
 </head>
 <body>
-    <p id="text-above">What's your argument? TRY 1.5</p>
-    <textarea id="textbox" placeholder="Type anything" style="font-size: 30px;"></textarea>
+    <p id="text-above">What's your argument? TRY 1.1</p>
+    <textarea id="textbox" placeholder="Type anything"></textarea>
 </body>
 </html>
 
