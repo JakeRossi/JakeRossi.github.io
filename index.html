@@ -11,16 +11,16 @@
         }
         #textbox {
             width: 80%;
-            height: 60px; /* Reduced height */
+            min-height: 60px; /* Reduced height */
             border: 10px solid black; /* Thicker outline */
             padding: 10px;
             font-size: 30px; /* Text inside box size */
-            line-height: 60px; /* Center the text vertically */
             border-radius: 10px; /* More circular shape */
             resize: none; /* Disabled resizing */
             text-align: left; /* Start text at the left */
             box-sizing: border-box; /* Include padding and border in width calculation */
             vertical-align: middle; /* Vertically align text in the middle */
+            overflow: auto; /* Allow the box to expand horizontally */
         }
         #text-above {
             font-size: 40px; /* Text above box size */
@@ -28,7 +28,7 @@
     </style>
 </head>
 <body>
-    <p id="text-above">What's your argument? TRY 1.4</p>
+    <p id="text-above">What's your argument? TRY 1.5</p>
     <textarea id="textbox" placeholder="Type anything" style="vertical-align: middle;"></textarea>
 </body>
 </html>
