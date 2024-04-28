@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Debate Bot AI?????</title>
+    <title>Debate Bot Try 2</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -35,10 +35,24 @@
             width: 80%;
             text-align: left;
         }
+        #send-button {
+            margin-top: 10px;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50; /* Green */
+            color: white;
+            cursor: pointer;
+        }
+        #send-button:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 <body>
     <textarea id="chat-input" placeholder="Type Any Claim..."></textarea>
+    <button id="send-button">Send</button>
     <div id="pros-cons"></div>
 
     <script>
@@ -72,23 +86,28 @@
         }
 
         // Function to display the generated response
-        async function displayResponse(text) {
-            try {
-                const response = await generateResponse(text);
-                document.getElementById("pros-cons").innerText = response;
-            } catch (error) {
-                console.error('Error:', error);
-                document.getElementById("pros-cons").innerText = 'Error generating response';
+        async function displayResponse() {
+            const text = document.getElementById("chat-input").value.trim();
+            if (text !== "") {
+                try {
+                    const response = await generateResponse(text);
+                    document.getElementById("pros-cons").innerText = response;
+                } catch (error) {
+                    console.error('Error:', error);
+                    document.getElementById("pros-cons").innerText = 'Error generating response';
+                }
+            } else {
+                document.getElementById("pros-cons").innerText = "Please enter a claim.";
             }
         }
 
-        // Event listener for textarea input
-        document.getElementById("chat-input").addEventListener("input", function() {
-            const text = this.value;
-            if (text.trim() !== "") {
-                displayResponse(text);
-            } else {
-                document.getElementById("pros-cons").innerText = ""; // Clear the response if input is empty
+        // Event listener for Send button
+        document.getElementById("send-button").addEventListener("click", displayResponse);
+
+        // Event listener for Enter key
+        document.getElementById("chat-input").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                displayResponse();
             }
         });
     </script>
