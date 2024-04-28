@@ -3,67 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Debate Bot 1.3</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #ffffcc; /* Pastel yellow background */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            height: 100vh;
-        }
-        #chat-input {
-            width: 80%;
-            height: 80px;
-            margin-top: 20px;
-            padding: 15px 20px;
-            font-size: 20px;
-            border: none;
-            border-radius: 30px;
-            background-color: #fff;
-            box-sizing: border-box;
-            resize: none;
-            outline: none;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
-        #pros-cons {
-            margin-top: 20px;
-            width: 80%;
-            text-align: left;
-        }
-        #send-button {
-            margin-top: 10px;
-            font-size: 16px;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            background-color: #4CAF50; /* Green */
-            color: white;
-            cursor: pointer;
-        }
-        #send-button:hover {
-            background-color: #45a049;
-        }
-    </style>
+    <title>ChatGPT Bot</title>
 </head>
 <body>
-    <textarea id="chat-input" placeholder="Type Any Claim..."></textarea>
+    <textarea id="chat-input" placeholder="Type your message..."></textarea>
     <button id="send-button">Send</button>
-    <div id="pros-cons"></div>
+    <div id="response"></div>
 
     <script>
         async function generateResponse(text) {
             try {
-                const apiKey = 'sk-proj-6VpfAi9BazvKAAfIkn27T3BlbkFJXrYoXyptyh5sIDMRbXIN'; // Replace 'YOUR_API_KEY_HERE' with your actual API key
                 const response = await fetch('https://api.openai.com/v1/completions', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': 'Bearer ' + apiKey,
+                        'Authorization': 'Bearer sk-proj-6VpfAi9BazvKAAfIkn27T3BlbkFJXrYoXyptyh5sIDMRbXIN', // Replace with your actual API key
                     },
                     body: JSON.stringify({
                         model: 'text-davinci-002',
@@ -89,20 +43,18 @@
             if (text !== "") {
                 try {
                     const response = await generateResponse(text);
-                    document.getElementById("pros-cons").innerText = response;
+                    document.getElementById("response").innerText = response;
                 } catch (error) {
                     console.error('Error:', error);
-                    document.getElementById("pros-cons").innerText = 'Error generating response';
+                    document.getElementById("response").innerText = 'Error generating response';
                 }
             } else {
-                document.getElementById("pros-cons").innerText = "Please enter a claim.";
+                document.getElementById("response").innerText = "Please enter a message.";
             }
         }
 
-        // Attach event listener to button click
         document.getElementById("send-button").addEventListener("click", displayResponse);
 
-        // Attach event listener to Enter key press
         document.getElementById("chat-input").addEventListener("keypress", function(event) {
             if (event.key === "Enter") {
                 displayResponse();
