@@ -1,3 +1,6 @@
+Sure, I've made the adjustments to start the text at the left and fixed the placeholder text issue. Here's the updated code:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,8 +21,9 @@
             line-height: 60px; /* Center the text vertically */
             border-radius: 10px; /* More circular shape */
             resize: none; /* Disabled resizing */
-            text-align: center; /* Center the text horizontally */
+            text-align: left; /* Start text at the left */
             box-sizing: border-box; /* Include padding and border in width calculation */
+            vertical-align: middle; /* Vertically align text in the middle */
         }
         #text-above {
             font-size: 40px; /* Text above box size */
@@ -27,9 +31,12 @@
     </style>
 </head>
 <body>
-    <p id="text-above">What's your argument? TRY 1.2</p>
-    <textarea id="textbox" placeholder="Type anything"></textarea>
+    <p id="text-above">What's your argument? TRY 1.3</p>
+    <textarea id="textbox" placeholder="Type anything" style="vertical-align: middle;"></textarea>
 </body>
 </html>
+```
+
+Now, the text inside the textbox will start at the left, and the placeholder text will appear properly inside the textbox.
 
 
