@@ -11,29 +11,73 @@
             padding: 0;
             background-color: #ffffcc; /* Pastel yellow background */
             display: flex;
-            justify-content: center;
-            align-items: flex-start; /* Align items at the start (top) of the flex container */
+            flex-direction: column;
+            align-items: center;
             height: 100vh;
         }
         #chat-input {
             width: 80%;
             height: 80px;
-            margin-top: calc(100vh / 4); /* Position the text box about 1/3 from the top of the viewport */
-            padding: 15px 20px; /* Padding similar to ChatGPT */
-            font-size: 40px; /* Text inside box size */
-            border: none; /* Remove border */
-            border-radius: 30px; /* More circular shape */
-            background-color: #fff; /* Background color similar to ChatGPT */
-            box-sizing: border-box; /* Include padding in width calculation */
-            resize: none; /* Disabled resizing */
-            outline: none; /* Remove focus outline */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow similar to ChatGPT */
-            overflow: hidden; /* Hide scrollbars */
+            margin-top: 20px;
+            padding: 15px 20px;
+            font-size: 20px;
+            border: none;
+            border-radius: 30px;
+            background-color: #fff;
+            box-sizing: border-box;
+            resize: none;
+            outline: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        #pros-cons {
+            margin-top: 20px;
+            width: 80%;
+            text-align: left;
         }
     </style>
 </head>
 <body>
     <textarea id="chat-input" placeholder="Type Any Claim..."></textarea>
+    <div id="pros-cons"></div>
+
+    <script>
+        // Function to send text to the chatbot service and display pros and cons
+        function getProsCons(text) {
+            // Here, you'll send the text to your chatbot service using an API request
+            // Replace this with your actual API call
+            // Once you receive the response, update the pros and cons on the webpage
+            // For demonstration purposes, I'll simulate a response
+            const prosCons = {
+                pros: ["Pro 1", "Pro 2", "Pro 3"],
+                cons: ["Con 1", "Con 2", "Con 3"]
+            };
+            displayProsCons(prosCons);
+        }
+
+        // Function to display pros and cons on the webpage
+        function displayProsCons(prosCons) {
+            const prosConsDiv = document.getElementById("pros-cons");
+            prosConsDiv.innerHTML = "<h2>Pros:</h2><ul>";
+            prosCons.pros.forEach(pro => {
+                prosConsDiv.innerHTML += "<li>" + pro + "</li>";
+            });
+            prosConsDiv.innerHTML += "</ul><h2>Cons:</h2><ul>";
+            prosCons.cons.forEach(con => {
+                prosConsDiv.innerHTML += "<li>" + con + "</li>";
+            });
+            prosConsDiv.innerHTML += "</ul>";
+        }
+
+        // Event listener for textarea input
+        document.getElementById("chat-input").addEventListener("input", function() {
+            const text = this.value;
+            if (text.trim() !== "") {
+                getProsCons(text);
+            } else {
+                document.getElementById("pros-cons").innerHTML = "";
+            }
+        });
+    </script>
 </body>
 </html>
-
