@@ -7,11 +7,16 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f0f0f0; /* Background color similar to ChatGPT */
+            margin: 0;
+            padding: 0;
+            background-color: #ffffcc; /* Pastel yellow background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
         #chat-input {
-            width: 100%;
+            width: 80%;
             height: 60px;
             padding: 15px 20px; /* Padding similar to ChatGPT */
             font-size: 20px; /* Text inside box size */
@@ -22,12 +27,12 @@
             resize: none; /* Disabled resizing */
             outline: none; /* Remove focus outline */
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow similar to ChatGPT */
+            overflow: hidden; /* Hide scrollbars */
         }
     </style>
 </head>
 <body>
-    <p id="text-above">What's your argument? TRY 1.2</p>
-    <textarea id="chat-input" placeholder=""></textarea>
+    <textarea id="chat-input" placeholder="Type your message here..."></textarea>
 </body>
 </html>
 
