@@ -3,33 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text Box</title>
+    <title>ChatGPT Text Box</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
+            background-color: #f0f0f0; /* Background color similar to ChatGPT */
         }
-        #textbox {
-            width: 80%;
-            min-height: 50px; /* Reduced height */
-            border: 10px solid black; /* Thicker outline */
-            padding: 10px;
-            font-size: 50px; /* Text inside box size */
-            border-radius: 10px; /* More circular shape */
+        #chat-input {
+            width: 100%;
+            height: 60px;
+            padding: 15px 20px; /* Padding similar to ChatGPT */
+            font-size: 20px; /* Text inside box size */
+            border: none; /* Remove border */
+            border-radius: 30px; /* More circular shape */
+            background-color: #fff; /* Background color similar to ChatGPT */
+            box-sizing: border-box; /* Include padding in width calculation */
             resize: none; /* Disabled resizing */
-            text-align: left; /* Start text at the left */
-            box-sizing: border-box; /* Include padding and border in width calculation */
-            vertical-align: middle; /* Vertically align text in the middle */
-            overflow: auto; /* Allow the box to expand horizontally */
-        }
-        #text-above {
-            font-size: 60px; /* Text above box size */
+            outline: none; /* Remove focus outline */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow similar to ChatGPT */
         }
     </style>
 </head>
 <body>
-    <p id="text-above">What's your argument? TRY 1.1</p>
-    <textarea id="textbox" placeholder="" style="vertical-align: middle;"></textarea>
+    <p id="text-above">What's your argument? TRY 1.2</p>
+    <textarea id="chat-input" placeholder=""></textarea>
 </body>
 </html>
 
