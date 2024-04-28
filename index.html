@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Debate BotTry 1.1</title>
+    <title>Debate Bot 1.2</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -99,8 +99,10 @@
             }
         }
 
+        // Attach event listener to button click
         document.getElementById("send-button").addEventListener("click", displayResponse);
 
+        // Attach event listener to Enter key press
         document.getElementById("chat-input").addEventListener("keypress", function(event) {
             if (event.key === "Enter") {
                 displayResponse();
