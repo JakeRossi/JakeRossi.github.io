@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Debate Bot 1.2</title>
+    <title>Debate Bot 1.3</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -58,7 +58,7 @@
     <script>
         async function generateResponse(text) {
             try {
-                const apiKey = process.env.sk-proj-6VpfAi9BazvKAAfIkn27T3BlbkFJXrYoXyptyh5sIDMRbXIN; // Use environment variable for API key
+                const apiKey = 'sk-proj-6VpfAi9BazvKAAfIkn27T3BlbkFJXrYoXyptyh5sIDMRbXIN'; // Replace 'YOUR_API_KEY_HERE' with your actual API key
                 const response = await fetch('https://api.openai.com/v1/completions', {
                     method: 'POST',
                     headers: {
