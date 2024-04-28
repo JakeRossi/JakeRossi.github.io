@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChatGPT Text Box</title>
+    <title>Debate Bot</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,12 +12,13 @@
             background-color: #ffffcc; /* Pastel yellow background */
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start; /* Align items at the start (top) of the flex container */
             height: 100vh;
         }
         #chat-input {
             width: 80%;
             height: 80px;
+            margin-top: calc(100vh / 3); /* Position the text box about 1/3 from the top of the viewport */
             padding: 15px 20px; /* Padding similar to ChatGPT */
             font-size: 40px; /* Text inside box size */
             border: none; /* Remove border */
